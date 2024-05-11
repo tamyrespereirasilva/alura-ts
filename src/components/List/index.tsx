@@ -17,9 +17,9 @@ function List() {
 
     return (
         <aside className={style.listaTarefas}>
-                <h2 onClick={() => {
-                    setTarefas([...tarefas, { tarefa: 'Estudar estado', tempo: '05:00:00'}])
-                }}>Estudos do dia</h2>
+            <h2 onClick={() => {
+                setTarefas([...tarefas, { tarefa: 'Estudar estado', tempo: '05:00:00'}])
+            }}>Estudos do dia</h2>
             
         
 
