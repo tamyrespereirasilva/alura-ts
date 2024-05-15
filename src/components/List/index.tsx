@@ -1,23 +1,28 @@
+import React from "react";
 import { ITarefa } from "../../types/tarefa";
 import style from "./List.module.scss";
 import Item from "./item";
 
+interface Props {
+    tarefas: ITarefa[],
+    selecionaTarefa: (tarefaSelecionada: ITarefa) => void
 
-function List({ tarefas }: { tarefas: ITarefa[]}) {
-    
+}
+
+export default function List({ tarefas, selecionaTarefa } : Props) {
     return (
         <aside className={style.listaTarefas}>
             <h2>Estudos do dia</h2>
             <ul> 
-                {tarefas.map((item, index) => ( //função map
-                   <Item
-                        key={index}
+                {tarefas.map(item  => ( //função map
+                    <Item
+                        selecionaTarefa={selecionaTarefa}
+                        key={item.id}
                         {...item}
-                   />
+                    />
                 ))}
             </ul>
         </aside>
     )
 }
 
-export default List;
